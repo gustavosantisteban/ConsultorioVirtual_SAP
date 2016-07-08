@@ -1,0 +1,97 @@
+﻿@model IEnumerable<SeguridadWebv2.Models.Aplicacion.Especialidad>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<header id="intro">
+    @Html.Partial("_HeaderBusqueda")
+</header>
+
+<section id="especialidades">
+    <div class="container">
+        <div class="row text-center title">
+            <h2>Especialidades Más Solicitadas</h2>
+        </div>
+        <div class="row">
+            @foreach (var especialidad in Model)
+            {
+                <div class="col-md-4 portfolio-item">
+                        <img class="img-responsive" src="@Url.Content(especialidad .Imagen)" alt="Imagen" />
+                        <h4 class="heading">@especialidad.NombreEspecialidad</h4>
+                        <p class="description">Consulte con los mejores especialistas en el área de @especialidad.NombreEspecialidad para.</p>
+                        <a href="@Url.Action("ObtenerEspecialistas", "Especialidad", new { id = @especialidad.NombreEspecialidad })" class="btn btn-block btn-success"><i class="glyphicon glyphicon-heart"></i> Ver Especialistas</a>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+@*@{
+@model IEnumerable<SeguridadWebv2.Models.Auto>
+<div class="container">
+    <div class="jumbotron">
+        <h2>WillPam Autos</h2>
+        <p class="text-info">La Nueva experiencia a la hora de comprar autos!!</p>
+    </div>
+    <ul class="row thumbnails list-unstyled">
+        @foreach (var auto in Model)
+        {
+            <li class="span3 col-lg-3 col-sm-4 col-xs-6">
+                <div class="thumbnail">
+                    <img src="@Url.Content(auto.Imagen)" alt="Imagen" />
+                    <p class="text-center aler"> @auto.Marca - @auto.Modelo </p>
+                    <h4 class="text-center"><i class="glyphicon glyphicon-ok"></i> $ @auto.Precio </h4>
+                    <a href="@Url.Action("ConfirmarReserva", "Reserva", new { id = @auto.IDAuto })" class="btn btn-block btn-success"><i class="glyphicon glyphicon-shopping-cart"></i> Reservar</a>
+                </div>
+            </li>
+        }
+    </ul>
+</div>
+}*@
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var searchBoxBloodHound = new Bloodhound({
+                datumTokenizer: function (datum) {
+                    return Bloodhound.tokenizers.whitespace(datum.NombreEspecialidad);
+                },
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: {
+                    url: '/Home/BuscarEspecialidades?busqueda=%QUERY',
+                    wildcard: '%QUERY',
+                    // the returned json contains an array of strings, but the Bloodhound
+                    // suggestion engine expects JavaScript objects so this converts all of
+                    // those strings into objects containing the properties, title and author
+                    filter: function (resultados) {
+                        return $.map(resultados, function (data) {
+                            return {
+                                especialidad: data.NombreEspecialidad
+                            }
+                        });
+                    },
+
+                },
+
+            });
+
+            searchBoxBloodHound.initialize();
+
+            $('#scrollable-dropdown-menu #mensaje-busqueda #searchBox').typeahead(null, {
+                displayKey: 'especialidad',
+                source: searchBoxBloodHound.ttAdapter(),
+                limit: 10,
+                templates: {
+                    empty: [
+                      '<div class="empty-message">',
+                        'Lo siento, no se pudo encontrar la especialidad y/o el profesional.',
+                      '</div>'
+                    ].join('\n'),
+                    suggestion: Handlebars.compile('<p><strong>{{especialidad}}</strong></p>')
+                }
+            });
+
+        });
+    </script>
+}

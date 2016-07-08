@@ -1,0 +1,48 @@
+﻿@using SeguridadWebv2.Models
+@model IEnumerable<SeguridadWebv2.Models.Aplicacion.Especialista>
+@{
+    ViewBag.Title = "Consulta con Profesionales de la Salud";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-4 pull-right">
+                @Html.Partial("_PreguntaEspecialista")
+            </div>
+@if (Model.Count() > 0)
+{
+            foreach (var especialista in Model)
+            {
+                <div class="col-md-8">
+                    <div class="panel panel-danger">
+                        <div class="panel-body">
+                            <div class="col-md-3">
+                                <img src="@Url.Content(especialista.ImagenMedico)" class="img-circle img-responsive" />
+                            </div>
+                            <div class="col-md-5">
+                                <div class="header">
+                                    <h4 style="color: #3333FF">@especialista.Prefijo. @especialista.Nombre @especialista.Apellido</h4>
+                                    <h5>@especialista.Especialidad.NombreEspecialidad</h5>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                @especialista.Telefono <br />
+                                @especialista.NumeroMatricula
+                                <i class="fa fa-video-camera fa-5x" aria-hidden="true"></i>
+                                <div>
+                                    <a href="@Url.Action("Turnos", "Especialista", new { id = @especialista.EspecialistaId })" class="btn btn-danger"><i class="fa fa-heart-o"></i> Consultar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+}
+else
+{
+    @: <div class="text-muted">&nbsp;No se encontraron Especialistas.</div>
+}
+        </div>
+    </div>
+</div>

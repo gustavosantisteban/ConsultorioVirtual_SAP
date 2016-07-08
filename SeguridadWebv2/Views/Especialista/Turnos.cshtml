@@ -1,0 +1,32 @@
+﻿@model IEnumerable<SeguridadWebv2.Models.Aplicacion.Turno>
+@{
+    ViewBag.Title = "Turnos";
+}
+
+<h2>Turnos</h2>
+@foreach (var turno in Model)
+{
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-danger">
+            <div class="panel-body">
+                <div class="col-md-3">
+                    <img src="@Url.Content(turno.Especialista.ImagenMedico)" class="img-circle img-responsive" />
+                </div>
+                <div class="col-md-9">
+                    <div class="header">
+                        @turno.Especialista.Prefijo. @turno.Especialista.Nombre @turno.Especialista.Apellido
+                        @turno.Especialista.Telefono
+                        @turno.Especialista.NumeroMatricula
+                    </div>
+                </div>
+            </div>
+            @turno.FechaTurno
+            @turno.HoraInicio
+            @turno.HoraFin
+            @turno.Precio
+            @turno.Estado
+        </div>
+    </div>
+</div>
+}
