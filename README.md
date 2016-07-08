@@ -1,9 +1,10 @@
 # Consultorio Virtual
 Seminario Aplicación Profesional - SAP - 2016
 
-Login: 
+# Login: 
 Usuario : administrador@mcga.com <br />
 Contraseña: Mcga@123456
 
-- Cracks:  Agustin Stelzer
+# Cracks:  
+-          Agustin Stelzer
 -          William Santisteban
