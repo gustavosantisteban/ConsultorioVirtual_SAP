@@ -244,239 +244,214 @@ namespace SeguridadWebv2.Models
             };
             especialistas.ForEach(c => db.Especialistas.Add(c));
 
-            var turnos = new List<Turno>
+            var horarios = new List<Horario>
             {
                 //Inicio Primer Especialista
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("08:00"),
-                    HoraFin = TimeSpan.Parse("08:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 08:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 08:40"),
                     Especialista = especialistas[0],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("09:00"),
-                    HoraFin = TimeSpan.Parse("09:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 09:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 09:40"),
                     Especialista = especialistas[0],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("10:00"),
-                    HoraFin = TimeSpan.Parse("10:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 10:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 10:40"),
                     Especialista = especialistas[0],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("11:00"),
-                    HoraFin = TimeSpan.Parse("11:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 11:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 11:40"),
                     Especialista = especialistas[0],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("12:00"),
-                    HoraFin = TimeSpan.Parse("12:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 12:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 11:40"),
                     Especialista = especialistas[0],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("15:00"),
-                    HoraFin = TimeSpan.Parse("15:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 15:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 15:40"),
                     Especialista = especialistas[0],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("16:00"),
-                    HoraFin = TimeSpan.Parse("16:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 16:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 16:40"),
                     Especialista = especialistas[0],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("17:00"),
-                    HoraFin = TimeSpan.Parse("17:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 17:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 17:40"),
                     Especialista = especialistas[0],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
                 //Inicio Segundo Especialista
-               new Turno
+               new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("08:00"),
-                    HoraFin = TimeSpan.Parse("08:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 08:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 08:40"),
                     Especialista = especialistas[1],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("09:00"),
-                    HoraFin = TimeSpan.Parse("09:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 09:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 09:40"),
                     Especialista = especialistas[1],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("10:00"),
-                    HoraFin = TimeSpan.Parse("10:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 10:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 10:40"),
                     Especialista = especialistas[1],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("11:00"),
-                    HoraFin = TimeSpan.Parse("11:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 11:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 11:40"),
                     Especialista = especialistas[1],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
                 // Inicio Tercer Especialista
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("13:00"),
-                    HoraFin = TimeSpan.Parse("13:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 08:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 08:40"),
                     Especialista = especialistas[2],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("14:00"),
-                    HoraFin = TimeSpan.Parse("14:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 09:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 09:40"),
                     Especialista = especialistas[2],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("15:00"),
-                    HoraFin = TimeSpan.Parse("15:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 10:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 10:40"),
                     Especialista = especialistas[2],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("16:00"),
-                    HoraFin = TimeSpan.Parse("16:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 11:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 11:40"),
                     Especialista = especialistas[2],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
-                 new Turno
+                 new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("16:00"),
-                    HoraFin = TimeSpan.Parse("16:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 12:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 12:40"),
                     Especialista = especialistas[2],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
                 //Inicio del Cuarto Especialista
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("08:00"),
-                    HoraFin = TimeSpan.Parse("08:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 08:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 08:40"),
                     Especialista = especialistas[4],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("09:00"),
-                    HoraFin = TimeSpan.Parse("09:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 09:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 09:40"),
                     Especialista = especialistas[4],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("10:00"),
-                    HoraFin = TimeSpan.Parse("10:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 10:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 10:40"),
                     Especialista = especialistas[4],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Ocupado,
+                    Precio = 300M
                 },
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("11:00"),
-                    HoraFin = TimeSpan.Parse("11:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 11:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 11:40"),
                     Especialista = especialistas[4],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("12:00"),
-                    HoraFin = TimeSpan.Parse("12:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 12:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 12:40"),
                     Especialista = especialistas[4],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("15:00"),
-                    HoraFin = TimeSpan.Parse("15:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 15:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 15:40"),
                     Especialista = especialistas[4],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Ocupado,
+                    Precio = 300M
                 },
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("16:00"),
-                    HoraFin = TimeSpan.Parse("16:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 16:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 16:40"),
                     Especialista = especialistas[4],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Ocupado,
+                    Precio = 300M
                 },
-                new Turno
+                new Horario
                 {
-                    FechaTurno = DateTime.Parse("2016-02-15 00:00"),
-                    HoraInicio = TimeSpan.Parse("17:00"),
-                    HoraFin = TimeSpan.Parse("17:40"),
-                    Estado = Estado.Pendiente,
+                    FechaInicio = DateTime.Parse("2016-02-15 17:00"),
+                    FechaFin = DateTime.Parse("2016-02-15 17:40"),
                     Especialista = especialistas[4],
-                    Precio = 300.00
+                    Estado = EstadoHorario.Disponible,
+                    Precio = 300M
                 },
             };
-            turnos.ForEach(c => db.Turnos.Add(c));
+            horarios.ForEach(c => db.Horarios.Add(c));
             db.SaveChanges();
         }
     }

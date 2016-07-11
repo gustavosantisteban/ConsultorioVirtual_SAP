@@ -89,6 +89,7 @@ namespace SeguridadWebv2.Models
         public DbSet<Direccion_ObraSocial> Direcciones_ObraSociales { get; set; }
         public DbSet<Telefono_ObraSocial> Telefono_ObraSociales { get; set; }
         public DbSet<Paciente> Pacientes { get; set; }
+        public DbSet<Horario> Horarios { get; set; }
         public DbSet<Turno> Turnos { get; set; }
 
         // Override OnModelsCreating:

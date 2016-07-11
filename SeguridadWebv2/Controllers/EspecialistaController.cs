@@ -19,13 +19,22 @@ namespace SeguridadWebv2.Controllers
             return View();
         }
 
-        public async Task<ActionResult> Turnos(string id)
+        public ActionResult Turnos(string id)
         {
+            
             Especialista espec = db.Especialistas.FirstOrDefault(x => x.EspecialistaId == id);
 
-            IQueryable<Turno> turno = db.Turnos.Where(x => x.Especialista.EspecialistaId == id);
+            IQueryable<Horario> horario = db.Horarios.Where(x => x.Especialista.EspecialistaId == id)
+                                            .OrderBy(x => x.FechaInicio)
+                                            .Include(x => x.Especialista);
 
-            return View(await turno.ToListAsync());
+            var model = new GeneralViewModels
+            {
+                Especialista = espec,
+                Horarios = horario.ToList()
+            };
+            
+            return View(model);
         }
     }
 }

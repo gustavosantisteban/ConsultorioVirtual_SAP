@@ -23,6 +23,8 @@ namespace SeguridadWebv2.Models.Aplicacion
         public string Telefono { get; set; }
         public Especialidad Especialidad { get; set; }
         public string NumeroMatricula { get; set; }
+        public ICollection<Turno> Turnos { get; set; }
+        public ICollection<Horario> Horarios { get; set; }
     }
 
     public enum Prefijo

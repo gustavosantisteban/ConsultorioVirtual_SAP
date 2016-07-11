@@ -171,6 +171,7 @@
     <Compile Include="Models\Aplicacion\Contacto_ObraSocial.cs" />
     <Compile Include="Models\Aplicacion\Diagnostico.cs" />
     <Compile Include="Models\Aplicacion\Direccion_ObraSocial.cs" />
+    <Compile Include="Models\Aplicacion\GeneralViewModels.cs" />
     <Compile Include="Models\Aplicacion\Horario.cs" />
     <Compile Include="Models\Aplicacion\ObraSocial.cs" />
     <Compile Include="Models\Aplicacion\Paciente.cs" />
