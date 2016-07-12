@@ -12,6 +12,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using SeguridadWebv2.Models.Aplicacion;
+using SeguridadWebv2.Services;
 
 namespace SeguridadWebv2.Models
 {
@@ -249,64 +250,64 @@ namespace SeguridadWebv2.Models
                 //Inicio Primer Especialista
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 08:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 08:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 08:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 08:40"),
                     Especialista = especialistas[0],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
                 },
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 09:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 09:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 09:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 09:40"),
                     Especialista = especialistas[0],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
                 },
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 10:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 10:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 10:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 10:40"),
                     Especialista = especialistas[0],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
                 },
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 11:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 11:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 11:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 11:40"),
                     Especialista = especialistas[0],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
                 },
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 12:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 11:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 12:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 11:40"),
                     Especialista = especialistas[0],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
                 },
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 15:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 15:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 15:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 15:40"),
                     Especialista = especialistas[0],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
                 },
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 16:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 16:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 16:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 16:40"),
                     Especialista = especialistas[0],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
                 },
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 17:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 17:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 17:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 17:40"),
                     Especialista = especialistas[0],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
@@ -314,32 +315,32 @@ namespace SeguridadWebv2.Models
                 //Inicio Segundo Especialista
                new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 08:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 08:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 08:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 08:40"),
                     Especialista = especialistas[1],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
                 },
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 09:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 09:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 09:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 09:40"),
                     Especialista = especialistas[1],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
                 },
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 10:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 10:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 10:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 10:40"),
                     Especialista = especialistas[1],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
                 },
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 11:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 11:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 11:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 11:40"),
                     Especialista = especialistas[1],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
@@ -347,40 +348,40 @@ namespace SeguridadWebv2.Models
                 // Inicio Tercer Especialista
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 08:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 08:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 08:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 08:40"),
                     Especialista = especialistas[2],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
                 },
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 09:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 09:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 09:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 09:40"),
                     Especialista = especialistas[2],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
                 },
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 10:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 10:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 10:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 10:40"),
                     Especialista = especialistas[2],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
                 },
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 11:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 11:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 11:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 11:40"),
                     Especialista = especialistas[2],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
                 },
                  new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 12:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 12:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 12:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 12:40"),
                     Especialista = especialistas[2],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
@@ -388,70 +389,111 @@ namespace SeguridadWebv2.Models
                 //Inicio del Cuarto Especialista
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 08:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 08:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 08:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 08:40"),
                     Especialista = especialistas[4],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
                 },
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 09:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 09:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 09:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 09:40"),
                     Especialista = especialistas[4],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
                 },
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 10:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 10:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 10:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 10:40"),
                     Especialista = especialistas[4],
                     Estado = EstadoHorario.Ocupado,
                     Precio = 300M
                 },
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 11:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 11:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 11:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 11:40"),
                     Especialista = especialistas[4],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
                 },
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 12:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 12:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 12:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 12:40"),
                     Especialista = especialistas[4],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
                 },
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 15:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 15:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 15:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 15:40"),
                     Especialista = especialistas[4],
                     Estado = EstadoHorario.Ocupado,
                     Precio = 300M
                 },
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 16:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 16:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 16:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 16:40"),
                     Especialista = especialistas[4],
                     Estado = EstadoHorario.Ocupado,
                     Precio = 300M
                 },
                 new Horario
                 {
-                    FechaInicio = DateTime.Parse("2016-02-15 17:00"),
-                    FechaFin = DateTime.Parse("2016-02-15 17:40"),
+                    FechaInicio = DateTime.Parse("2016-07-15 17:00"),
+                    FechaFin = DateTime.Parse("2016-07-15 17:40"),
                     Especialista = especialistas[4],
                     Estado = EstadoHorario.Disponible,
                     Precio = 300M
                 },
             };
             horarios.ForEach(c => db.Horarios.Add(c));
+
+            var clientetarjeta = new List<ClienteTarjeta>
+            {
+                new ClienteTarjeta
+                {
+                    NombreCliente = "ALEJANDRO SARTORIO",
+                    DNI = 35252525
+                },
+                new ClienteTarjeta
+                {
+                    NombreCliente = "WILLIAM SANTISTEBAN",
+                    DNI = 94566808,
+                },
+            };
+            clientetarjeta.ForEach(c => db.ClienteTarjetas.Add(c));
+
+            var tarjetas = new List<Tarjeta>
+            {
+                new Tarjeta
+                {
+                    TipoDeTarjeta = TipoTarjeta.Visa.ToString(),
+                    NumeroTarjeta = "4907331874003523",
+                    MesExpiracion = (int)Mes.Mayo,
+                    AnoExpiracion = (int)AnoExpiracion.AnoActual,
+                    CodigoSeguridad = ServicioGenerico.EncriptarCVV("123"),
+                    Cliente = clientetarjeta[0],
+                    Estado = EstadoTarjeta.Habilitada.ToString(),
+                },
+                new Tarjeta
+                {
+                    TipoDeTarjeta = TipoTarjeta.Mastercard.ToString(),
+                    NumeroTarjeta = "4626077485249225",
+                    MesExpiracion = (int)Mes.Octubre,
+                    AnoExpiracion = (int)AnoExpiracion.AnoProx2,
+                    CodigoSeguridad = ServicioGenerico.EncriptarCVV("235"),
+                    Cliente = clientetarjeta[1],
+                    Estado = EstadoTarjeta.Rechazada.ToString(),
+                },
+            };
+            tarjetas.ForEach(c => db.Tarjetas.Add(c));
+
             db.SaveChanges();
         }
     }

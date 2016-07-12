@@ -1,0 +1,127 @@
+﻿@model SeguridadWebv2.Models.Aplicacion.TarjetaViewModel
+@{
+    ViewBag.Title = "Reservar Turno";
+}
+
+<h2>ReservarTurno</h2>
+
+<div class="row">
+    @using (Html.BeginForm("ConfirmarPagoReserva", "Turno", FormMethod.Post))
+    {
+        <div class="col-md-offset-2 col-md-8">
+            <!--FORM TARJETA DE CREDITO-->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><img class="pull-right" src="~/Content/img/tarjetas_aceptadas.png">Forma y Detalles de Pago</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="control-label col-md-3"><strong>Tipo Tarjeta</strong></div>
+                        <div class="col-md-8 input-group">
+                            @Html.DropDownList("IdTipoTarjeta", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.IdTipoTarjeta, "", new { @class = "text-danger" })
+                            <span class="input-group-addon">
+                                <span class="fa fa-credit-card">
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="control-label col-md-3"><strong>Numero de Tarjeta</strong></div>
+                        <div class="col-md-8 input-group">
+                            @Html.TextBoxFor(model => model.NumeroTarjeta, new { @class = "form-control", placeholder = "Ingrese los 16 digitos de su tarjeta" })
+                            @Html.ValidationMessageFor(model => model.NumeroTarjeta, "", new { @class = "text-danger" })
+                            <span class="input-group-addon">
+                                <span class="fa fa-credit-card">
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-4 col-sm-3 col-xs-3">
+                            <div class="control-label"><strong> Mes de Expiración</strong></div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    @Html.DropDownList("IdMesTarjeta", (SelectList)ViewBag.IdMesTarjeta, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.IdMesTarjeta, "", new { @class = "text-danger" })
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-calendar-plus-o">
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-3 col-xs-3">
+                            <div class="control-label"><strong>Año de Expiración</strong></div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    @Html.DropDownList("IdAnoExp", (SelectList)ViewBag.IdAnoExp, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.IdAnoExp, "", new { @class = "text-danger" })
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-calendar-minus-o">
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-3 col-xs-3">
+                            <div class="control-label"><strong>CVV de Seguridad</strong></div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    @Html.PasswordFor(model => model.CodigoSeguridad, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.CodigoSeguridad, "", new { @class = "text-danger" })
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-credit-card-alt">
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-6 col-sm-6 col-xs-3">
+                            <div class="control-label"><strong>Nombre Del Titular Tarjeta</strong></div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    @Html.TextBoxFor(model => model.NombreClienteTarjeta, new { @class = "form-control", placeholder = "Nombre Titular de la Tarjeta" })
+                                    @Html.ValidationMessageFor(model => model.NombreClienteTarjeta, "", new { @class = "text-danger" })
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-user">
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-3">
+                            <div class="control-label"><strong>DNI Titular</strong></div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    @Html.TextBoxFor(model => model.DNIClienteTarjeta, new { @class = "form-control", placeholder = "DNI Titular de la Tarjeta" })
+                                    @Html.ValidationMessageFor(model => model.DNIClienteTarjeta, "", new { @class = "text-danger" })
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-tags">
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*@Html.HiddenFor(model => model.idreserva, new { Value = reserva })*@
+                    <div class="col-md-12 col-sm-6 col-xs-6 pad-adjust">
+                        <input type="submit" class="btn btn-warning btn-block" value="PAGAR" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

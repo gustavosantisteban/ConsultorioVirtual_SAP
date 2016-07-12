@@ -108,7 +108,7 @@ WebRtcDemo.App = (function (viewModel, connectionManager) {
         
         _attachUiHandlers = function() {
             // Add click handler to users in the "Users" pane
-            $('.user').live('click', function () {
+            $(document).on('click', '.user', function () {
                 // Find the target user's SignalR client id
                 var targetConnectionId = $(this).attr('data-cid');
 
@@ -144,10 +144,10 @@ WebRtcDemo.App = (function (viewModel, connectionManager) {
         _setupHubCallbacks = function (hub) {
             // Hub Callback: Incoming Call
             hub.client.incomingCall = function (callingUser) {
-                console.log('incoming call from: ' + JSON.stringify(callingUser));
+                console.log('llamada entrante de: ' + JSON.stringify(callingUser));
 
                 // Ask if we want to talk
-                alertify.confirm(callingUser.Username + ' is calling.  Do you want to chat?', function (e) {
+                alertify.confirm(callingUser.Username + ' esta llamando.  Queres realizar la videoconferencia?', function (e) {
                     if (e) {
                         // I want to chat
                         hub.server.answerCall(true, callingUser.ConnectionId);
@@ -163,7 +163,7 @@ WebRtcDemo.App = (function (viewModel, connectionManager) {
 
             // Hub Callback: Call Accepted
             hub.client.callAccepted = function (acceptingUser) {
-                console.log('call accepted from: ' + JSON.stringify(acceptingUser) + '.  Initiating WebRTC call and offering my stream up...');
+                console.log('llamada aceptada de: ' + JSON.stringify(acceptingUser) + '.  Inicializando WebRTC llamando y ofreciendo stream...');
 
                 // Callee accepted our call, let's send them an offer with our video stream
                 connectionManager.initiateOffer(acceptingUser.ConnectionId, _mediaStream);
@@ -185,7 +185,7 @@ WebRtcDemo.App = (function (viewModel, connectionManager) {
 
             // Hub Callback: Call Ended
             hub.client.callEnded = function (connectionId, reason) {
-                console.log('call with ' + connectionId + ' has ended: ' + reason);
+                console.log('la llamada con ' + connectionId + ' ah sido finalizada: ' + reason);
 
                 // Let the user know why the server says the call is over
                 alertify.error(reason);

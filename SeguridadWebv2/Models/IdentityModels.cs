@@ -91,6 +91,8 @@ namespace SeguridadWebv2.Models
         public DbSet<Paciente> Pacientes { get; set; }
         public DbSet<Horario> Horarios { get; set; }
         public DbSet<Turno> Turnos { get; set; }
+        public DbSet<Tarjeta> Tarjetas { get; set; }
+        public DbSet<ClienteTarjeta> ClienteTarjetas { get; set; }
 
         // Override OnModelsCreating:
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

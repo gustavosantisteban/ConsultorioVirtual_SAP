@@ -28,9 +28,9 @@ WebRtcDemo.ViewModel = (function () {
         if (this.Mode() == 'idle') {
             callStatus = 'Idle';
         } else if (this.Mode() == 'calling') {
-            callStatus = 'Calling...';
+            callStatus = 'LLamando...';
         } else {
-            callStatus = 'In Call';
+            callStatus = 'Ocupado';
         }
 
         return callStatus;

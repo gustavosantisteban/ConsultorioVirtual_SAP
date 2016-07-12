@@ -22,7 +22,10 @@ namespace SeguridadWebv2
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/jquery.js",
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/moment.js",
+                      "~/Scripts/bootstrap-datetimepicker.min.js",
+                      "~/Scripts/moment-with-locales.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/typeahead").Include(
                       "~/Scripts/typeahead.bundle.js",
@@ -53,7 +56,8 @@ namespace SeguridadWebv2
                       "~/Content/font-awesome/css/font-awesome.css",
                       "~/Content/bootstrap.css",
                       "~/Content/typeaheadjs.css",
-                      "~/Content/SeguridadStyle.css"));
+                      "~/Content/SeguridadStyle.css",
+                      "~/Content/bootstrap-datetimepicker.css"));
 
             bundles.Add(new StyleBundle("~/Content/adminPanel").Include(
                  "~/Content/font-awesome/css/font-awesome.css",
