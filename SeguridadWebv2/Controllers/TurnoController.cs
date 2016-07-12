@@ -19,19 +19,24 @@ namespace SeguridadWebv2.Controllers
         {
             return View();
         }
-        
-        public ActionResult ReservarTurno()
-        {
-            //if (r == null)
-            //{
-            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            //}
-            //var reservaid = db.ReservaHoteles.Find(r);
-            //if (reservaid == null)
-            //{
-            //    return HttpNotFound();
-            //}
 
+        [HttpGet]
+        [Authorize]
+        public ActionResult ReservarTurno(string id, string espec)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var showhorario = db.Horarios.Find(id);
+            var especialista = db.Especialistas.Find(espec);
+
+            if (showhorario == null)
+            {
+                return HttpNotFound();
+            }
+            
             var tipotarjeta = from TipoTarjeta d in Enum.GetValues(typeof(TipoTarjeta))
                               select new { IdTipoTarjeta = (int)d, Name = d.ToString() };
 
@@ -46,10 +51,20 @@ namespace SeguridadWebv2.Controllers
             ViewBag.IdTipoTarjeta = new SelectList(tipotarjeta, "IdTipoTarjeta", "Name");
             ViewBag.IdMesTarjeta = new SelectList(mestarjeta, "IdMesTarjeta", "Name");
             ViewBag.IdAnoExp = new SelectList(anotarjeta, "IdAnoExp", "Name");
-            //ViewBag.IdReserva = r;
-            return View();
+
+            ViewBag.IdHorarioShowView = showhorario;
+            var model = new Models.Aplicacion.ReservaViewModel
+            {
+                Especialista = especialista,
+                Horario = showhorario,
+                TarjetaVM = new TarjetaViewModel(),
+            };
+
+            return View(model);
         }
 
+        [HttpPost]
+        [Authorize]
         public ActionResult ConfirmarPagoReserva(TarjetaViewModel model)
         {
             if (ModelState.IsValid)

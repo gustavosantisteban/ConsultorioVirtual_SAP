@@ -49,7 +49,7 @@
                                         <td>@horario.Estado</td>
                                         <td>$ @horario.Precio</td>
                                         <td class="text-center">
-                                            <a href="@Url.Action("ReservarTurno", "Turno", new { id = horario.IDHorario})" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-pencil"></span> Reservar </a>
+                                            <a href="@Url.Action("ReservarTurno", "Turno", new { id = horario.IDHorario, espec = horario.Especialista.EspecialistaId })" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-pencil"></span> Reservar </a>
                                         </td>
                                     </tr>
                                 }

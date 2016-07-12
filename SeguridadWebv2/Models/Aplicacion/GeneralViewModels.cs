@@ -39,4 +39,19 @@ namespace SeguridadWebv2.Models.Aplicacion
         public string idreserva { get; set; }
     }
 
+    public class HorarioViewModel
+    {
+        public DateTime FechaInicio { get; set; }
+        public DateTime FechaFin { get; set; }
+        public decimal Precio { get; set; }
+        public Especialista Especialista { get; set; }
+    }
+
+    public class ReservaViewModel
+    {
+        public Horario Horario { get; set; }
+        public Especialista Especialista { get; set; }
+        public TarjetaViewModel TarjetaVM { get; set; }
+    }
+
 }
