@@ -11,8 +11,8 @@ Usuario : administrador@mcga.com <br />
 Contraseña: Mcga@123456
 
 # Cracks:  
--          Agustin Stelzer
--          William Santisteban
+-          Agustin Stelzer : LinkedIn: https://ar.linkedin.com/in/agustin-stelzer-53a4486a
+-          William Gustavo Santisteban : LinkedIn: https://ar.linkedin.com/in/gustavosantisteban
 
 ![Image 1](home_consultoriovirtual.png)
 ![Image 2](listado_especialistas.png)
