@@ -29,8 +29,8 @@ namespace SeguridadWebv2.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var showhorario = db.Horarios.Find(id);
-            var especialista = db.Especialistas.Find(espec);
+            var showhorario = db.Horarios.Where(x => x.IDHorario == id).FirstOrDefault();
+            var especialista = db.Especialistas.Where(x => x.EspecialistaId == id).FirstOrDefault();
 
             if (showhorario == null)
             {
@@ -53,11 +53,11 @@ namespace SeguridadWebv2.Controllers
             ViewBag.IdAnoExp = new SelectList(anotarjeta, "IdAnoExp", "Name");
 
             ViewBag.IdHorarioShowView = showhorario;
-            var model = new Models.Aplicacion.ReservaViewModel
+            ViewBag.IdEspecislistaShowView = especialista;
+            var model = new Models.Aplicacion.TarjetaViewModel
             {
-                Especialista = especialista,
-                Horario = showhorario,
-                TarjetaVM = new TarjetaViewModel(),
+                idespecialista = especialista,
+                idhorario = showhorario,
             };
 
             return View(model);
@@ -65,7 +65,7 @@ namespace SeguridadWebv2.Controllers
 
         [HttpPost]
         [Authorize]
-        public ActionResult ConfirmarPagoReserva(TarjetaViewModel model)
+        public ActionResult ConfirmarPagoReserva(Models.Aplicacion.TarjetaViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -82,9 +82,22 @@ namespace SeguridadWebv2.Controllers
                     return View("Error");
                 }
 
-                //var reservahotel = db.ReservaHoteles.Find(idreserva);
+                var especialistareserva = db.Especialistas.Find(model.idespecialista);
+                var horarioreserva = db.Horarios.Find(model.idhorario);
+
                 if (tarjeta != null && tarjeta.Estado == "Habilitada")
                 {
+
+                    var turno = new Turno
+                    {
+                        Especialista = especialistareserva,
+                        Horario = horarioreserva,
+                        Estado = Estado.Reservado,
+                        EsElDiaDelTurno = false
+                    };
+                    db.Turnos.Add(turno);
+                    db.SaveChanges();
+
                     //var pago = new Pago { ReservaHotel = reservahotel, FechaPago = DateTime.Now, IdTarjeta = tarjeta.IdTarjeta };
                     //db.Pagos.Add(pago);
                     //db.SaveChanges();

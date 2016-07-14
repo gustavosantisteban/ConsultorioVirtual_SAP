@@ -17,8 +17,10 @@ namespace SeguridadWebv2.Models.Aplicacion
         [Key]
         public string IdTurno { get; set; }
         public Especialista Especialista { get; set; }
+        public Horario Horario { get; set; }
         public bool EsElDiaDelTurno { get; set; }
         public Estado Estado { get; set; }
+        public ApplicationUser User { get; set; }
     }
 
     public enum Estado

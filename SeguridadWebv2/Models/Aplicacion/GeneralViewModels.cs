@@ -36,7 +36,9 @@ namespace SeguridadWebv2.Models.Aplicacion
         public string NombreClienteTarjeta { get; set; }
         [Required]
         public int DNIClienteTarjeta { get; set; }
-        public string idreserva { get; set; }
+        public Especialista idespecialista { get; set; }
+        public Horario idhorario { get; set; }
+        public ApplicationUser UsuarioPaciente { get; set; }
     }
 
     public class HorarioViewModel
@@ -46,12 +48,6 @@ namespace SeguridadWebv2.Models.Aplicacion
         public decimal Precio { get; set; }
         public Especialista Especialista { get; set; }
     }
-
-    public class ReservaViewModel
-    {
-        public Horario Horario { get; set; }
-        public Especialista Especialista { get; set; }
-        public TarjetaViewModel TarjetaVM { get; set; }
-    }
+    
 
 }

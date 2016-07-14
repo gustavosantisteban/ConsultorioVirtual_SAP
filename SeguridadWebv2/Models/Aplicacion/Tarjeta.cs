@@ -53,15 +53,15 @@ namespace SeguridadWebv2.Models.Aplicacion
 
     public enum Mes
     {
-        Enero = 01,
-        Febrero = 02,
-        Marzo = 03,
-        Abril = 04,
-        Mayo = 05,
-        Junio = 06,
-        Julio = 07,
-        Agosto = 08,
-        Septiembre = 09,
+        Enero = 1,
+        Febrero = 2,
+        Marzo = 3,
+        Abril = 4,
+        Mayo = 5,
+        Junio = 6,
+        Julio = 7,
+        Agosto = 8,
+        Septiembre = 9,
         Octubre = 10,
         Noviembre = 11,
         Diciembre = 12
